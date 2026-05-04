@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-warm-900 text-stone-100 font-sans antialiased;
+    background: #1a1209;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-warm-800;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-rose-700 rounded-full;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:bg-white/8 hover:border-white/20 hover:shadow-glass hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply bg-rose-600 hover:bg-rose-500 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:shadow-glow active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/40 font-semibold px-6 py-3 rounded-xl transition-all duration-200 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border-2 border-rose-500 text-rose-400 hover:bg-rose-500 hover:text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 active:scale-95;
+  }
+
+  .input-field {
+    @apply bg-white/5 border border-white/20 text-white placeholder-stone-400 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent transition-all duration-200 w-full;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl font-bold text-white;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-fashion {
+    @apply badge bg-rose-500/20 text-rose-300 border border-rose-500/30;
+  }
+
+  .badge-crochet {
+    @apply badge bg-sage-500/20 text-sage-300 border border-sage-500/30;
+  }
+
+  .badge-books {
+    @apply badge bg-cream-500/20 text-cream-300 border border-cream-500/30;
+  }
+
+  .nav-link {
+    @apply text-stone-300 hover:text-white transition-colors duration-200 font-medium relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-rose-400 hover:after:w-full after:transition-all after:duration-300;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .star-filled {
+    color: #e4b43e;
+  }
+
+  .star-empty {
+    color: #4b4b4b;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-rose-400 via-pink-400 to-cream-400 bg-clip-text text-transparent;
+  }
+
+  .bg-white\/8 {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
