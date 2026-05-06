@@ -10,7 +10,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { to: '/', label: 'Home' },
+    { to: '/home', label: 'Home' },
     { to: '/products', label: 'Shop' },
     { to: '/products?category=Fashion', label: 'Fashion' },
     { to: '/products?category=Crochet', label: 'Crochet' },
@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="page-container">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/home" className="flex items-center gap-2 group">
             <Sparkles className="w-6 h-6 text-rose-400 group-hover:text-rose-300 transition-colors" />
             <span className="font-display text-xl font-bold text-gradient">ShopWave</span>
           </Link>
