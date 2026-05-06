@@ -1,16 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Sparkles, UserPlus, Eye, EyeOff, ShoppingBag } from 'lucide-react';
 import Spinner from '../components/ui/Spinner';
 
 const Signup = () => {
-  const { register } = useAuth();
+  const { register, user } = useAuth();
   const navigate = useNavigate();
   const [form, setForm] = useState({ name: '', email: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [showPass, setShowPass] = useState(false);
+
+  useEffect(() => {
+    if (user) {
+      navigate(user.role === 'admin' ? '/admin' : '/home');
+    }
+  }, [user, navigate]);
 
   const update = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
